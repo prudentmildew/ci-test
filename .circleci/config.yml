@@ -32,6 +32,18 @@ jobs:
           paths:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
-
-      # run tests!
-      - run: ./vendor/bin/phpunit ./tests/
+  test:
+    - run: ./vendor/bin/phpunit ./tests/
+  deploy:
+    - run: echo 'deploying...'
+workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
