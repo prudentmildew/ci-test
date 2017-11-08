@@ -33,9 +33,11 @@ jobs:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
   test:
+    docker
     steps:
       - run: ./vendor/bin/phpunit ./tests/
   deploy:
+    docker
     steps:
       - run: echo 'deploying...'
 workflows:
