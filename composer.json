@@ -1,0 +1,12 @@
+{
+    "name": "erland/ci-test",
+    "require": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "authors": [
+        {
+            "name": "Erland Wiencke",
+            "email": "erland.wiencke@eggsdesign.com"
+        }
+    ]
+}
